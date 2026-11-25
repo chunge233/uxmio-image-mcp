@@ -1,0 +1,33 @@
+{
+  "name": "UXMIO AI Image Generation (HTTP Request Node)",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.uxmio.com/v1/images/generations",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{ $env.UXMIO_API_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"model\": \"gpt-image-2.5\",\n  \"prompt\": \"{{ $json.prompt || 'Minimalist e-commerce hero banner for wireless earbuds' }}\",\n  \"size\": \"1536x1024\",\n  \"response_format\": \"url\"\n}"
+      },
+      "id": "uxmio-image-http",
+      "name": "UXMIO Image API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [360, 260]
+    }
+  ],
+  "connections": {}
+}

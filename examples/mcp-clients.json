@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "uxmio-image": {
+      "command": "npx",
+      "args": ["-y", "github:chunge233/uxmio-image-mcp"],
+      "env": {
+        "UXMIO_API_KEY": "sk-your-api-key",
+        "UXMIO_API_BASE_URL": "https://api.uxmio.com/v1",
+        "UXMIO_DEFAULT_MODEL": "gpt-image-2.5"
+      }
+    }
+  }
+}

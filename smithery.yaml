@@ -1,0 +1,32 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    required:
+      - uxmioApiKey
+    properties:
+      uxmioApiKey:
+        type: string
+        description: API key for api.uxmio.com (or any OpenAI-compatible /v1/images endpoint).
+      uxmioApiBaseUrl:
+        type: string
+        default: https://api.uxmio.com/v1
+        description: Optional custom OpenAI-compatible base URL.
+      uxmioDefaultModel:
+        type: string
+        default: gpt-image-2.5
+        description: Default model ID (gpt-image-2, gpt-image-2.5, gpt-image-2.6, gemini-3.1-flash-image, gemini-3-pro-image).
+      uxmioOutputDir:
+        type: string
+        description: Optional default local directory to auto-save generated images.
+  commandFunction: |-
+    (config) => ({
+      command: 'node',
+      args: ['bin/uxmio-image-mcp.mjs'],
+      env: {
+        UXMIO_API_KEY: config.uxmioApiKey,
+        ...(config.uxmioApiBaseUrl ? { UXMIO_API_BASE_URL: config.uxmioApiBaseUrl } : {}),
+        ...(config.uxmioDefaultModel ? { UXMIO_DEFAULT_MODEL: config.uxmioDefaultModel } : {}),
+        ...(config.uxmioOutputDir ? { UXMIO_OUTPUT_DIR: config.uxmioOutputDir } : {}),
+      },
+    })

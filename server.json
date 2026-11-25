@@ -1,0 +1,41 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+  "name": "io.github.chunge233/uxmio-image-mcp",
+  "title": "UXMIO Image MCP Server",
+  "description": "Zero-dependency MCP server & CLI for AI image generation and multi-image editing (GPT Image 2/2.5/2.6, Gemini 3.1 Flash / 3 Pro Image) via any OpenAI-compatible /v1/images API.",
+  "version": "1.0.0",
+  "repository": {
+    "url": "https://github.com/chunge233/uxmio-image-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://api.uxmio.com/?utm_source=github_mcp",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "github:chunge233/uxmio-image-mcp",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "UXMIO_API_KEY",
+          "description": "API key for api.uxmio.com or any OpenAI-compatible /v1/images provider",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "UXMIO_API_BASE_URL",
+          "description": "Optional custom OpenAI-compatible base URL (default: https://api.uxmio.com/v1)",
+          "isRequired": false,
+          "isSecret": false
+        },
+        {
+          "name": "UXMIO_DEFAULT_MODEL",
+          "description": "Default model ID (default: gpt-image-2.5)",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "name": "uxmio-image-mcp",
+  "version": "1.0.0",
+  "description": "Zero-dependency MCP server & CLI for AI image generation and multi-image editing (GPT Image 2/2.5/2.6, Gemini 3.1 Flash / 3 Pro Image) via any OpenAI-compatible /v1/images API (default: api.uxmio.com).",
+  "type": "module",
+  "main": "./src/mcpServer.mjs",
+  "bin": {
+    "uxmio-image-mcp": "./bin/uxmio-image-mcp.mjs",
+    "uxmio-image": "./bin/uxmio-image-mcp.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "examples",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node ./bin/uxmio-image-mcp.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "ai-image-generation",
+    "image-editing",
+    "gpt-image",
+    "gpt-image-2.5",
+    "gemini-image",
+    "nano-banana",
+    "openai-compatible",
+    "claude-code",
+    "cursor",
+    "windsurf",
+    "cline",
+    "cherry-studio",
+    "uxmio"
+  ],
+  "author": "UXMIO (https://api.uxmio.com)",
+  "license": "MIT",
+  "homepage": "https://api.uxmio.com/?utm_source=github_mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chunge233/uxmio-image-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chunge233/uxmio-image-mcp/issues"
+  }
+}
